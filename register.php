@@ -154,7 +154,7 @@
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Password 1</div>
-                    <div class="col-8"><input type="password" pattern=".{8,}" name="password1" value="<?php echo htmlspecialchars($password1)?>" style="border:none;width:100%" required></div><br/>
+                    <div class="col-8"><input type="password" minlength="8" name="password1" value="<?php echo htmlspecialchars($password1)?>" style="border:none;width:100%" required></div><br/>
                         <?php if(isset($password1_error)){ ?>
                             <p><?php echo $password1_error ?> </p>
                         <?php } ?>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Password 2</div>
-                    <div class="col-8"><input type="password" pattern=".{8,}" name="password2" value="<?php echo htmlspecialchars($password2)?>" style="border:none;width:100%" required></div><br/>
+                    <div class="col-8"><input type="password" minlength="8" name="password2" value="<?php echo htmlspecialchars($password2)?>" style="border:none;width:100%" required></div><br/>
                         <?php if(isset($password2_error)){ ?>
                             <p><?php echo $password2_error ?> </p>
                         <?php } ?>

@@ -36,7 +36,7 @@ if(!isset($_SESSION['login'])){
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4" style="text-align:right">Password</div>
-                    <div class="col-6"><input type="password" name="passwordLogin" style="border:none;width:100%" required></div>
+                    <div class="col-6"><input type="password" minlength="8" name="passwordLogin" style="border:none;width:100%" required></div>
                 </div>
                 <div class="row" style="margin-bottom:30px; margin-left: 220px">
                     <div class="col-4"><input type="submit" name="login" value="Login" style="background-color:#adf59f; width:100%; height:30px; border:none; font-size:15px; border-radius: 0px;"></div>

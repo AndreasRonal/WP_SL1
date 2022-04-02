@@ -1,8 +1,6 @@
 <?php
 
-if(!isset($_SESSION['login'])){
-    $_SESSION['login'] = false;
-}
+    require("config.php");
 
 ?>
 
@@ -26,13 +24,18 @@ if(!isset($_SESSION['login'])){
     </style>
 </head>
 <body>
+    <script type='text/javascript'>
+        function loginGagal(){
+            alert('Login Gagal');
+        }
+    </script>
     <h3 class="text-center" style="margin-top:30px; margin-bottom:80px">Login</h3>
     <form action="prosesLogin.php" method="post" style="margin:1%; text-align:center; width:50vw; margin-left:25vw;">
         <div class="row">
             <div class="col" style="background-color:#ace6fd">
                 <div class="row" style="margin-top:30px; margin-bottom:30px">
                     <div class="col-4" style="text-align:right">Username</div>
-                    <div class="col-6"><input type="text" name="usernameLogin" style="border:none;width:100%" required></div>
+                    <div class="col-6"><input type="text" name="usernameLogin" minlength="8" style="border:none;width:100%" required></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4" style="text-align:right">Password</div>
@@ -43,9 +46,8 @@ if(!isset($_SESSION['login'])){
                     <div class="col-4"><button type="button" class="btn btn-lg" onclick="location.href='welcome.php'" style="background-color:#fdd7ac; width:100%; height:30px; font-size:15px; border:none; display: flex; justify-content:center; align-items:center; border-radius: 0px;">Kembali</button></div>
                 </div>
                 <?php
-                    if($_SESSION['login'] === true){
-                        $message = "Login Gagal";
-                        echo "<script type='text/javascript'>alert('$message');</script>";
+                    if($_SESSION['login_error'] == true){
+                        echo "<script> loginGagal(); </script>";
                     }
                 ?>
             </div>

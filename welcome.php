@@ -1,9 +1,5 @@
 <?php
-
-    if(!isset($_SESSION['register'])){
-        $_SESSION['register'] = false;
-    }
-
+    require("config.php");
 ?>
 
 <!DOCTYPE html>
@@ -39,15 +35,19 @@
     </style>
 </head>
 <body>
+    <script type='text/javascript'>
+        function registerSukses(){
+            alert('Register Sukses');
+        }
+    </script>
     <div class="row" style="margin-top:30px">
         <div class="col text-center">Aplikasi Pengelolaan Keuangan</div>
         <h2 class="text-center" style="margin-top:80px;margin-bottom:50px">Selamat Datang di Aplikasi Pengelolaan Keuangan</h2>
         <div class="col buttonLogin"><button type="button" class="btn btn-info btn-lg" onclick="location.href='login.php'">Login</button></div>
         <div class="col buttonRegister"><button type="button" class="btn btn-success btn-lg"onclick="location.href='register.php'">Register</button></div>
         <?php 
-            if($_SESSION['register'] === true){
-                $message = "Register Sukses";
-                echo "<script type='text/javascript'>alert('$message');</script>";
+            if($_SESSION['register_error'] == true){
+                echo "<script> registerSukses(); </script>";
             }
         ?>
     </div>

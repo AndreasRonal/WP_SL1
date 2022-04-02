@@ -10,6 +10,19 @@
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
 
+        $str_query = "select 'username' from user";
+        $result = mysqli_query($connection, $str_query);
+        if($result){
+            if(mysqli_num_rows($result)){
+                while($row = mysqli_fetch_array($result)){
+                    if($row["username"] == $_POST["username"]){
+                        $_SESSION['username_error'] = "Username sudah terpakai";
+                        header('Location: register.php');
+                    }
+                }
+            }
+        }
+
         if($password2 != $password1){
             $password2_error = "Password berbeda dari password 1";
         }else{

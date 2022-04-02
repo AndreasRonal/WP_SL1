@@ -53,6 +53,9 @@
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Username</div>
                     <div class="col-8"><input type="text" name="username" minlength="8" style="border:none;width:100%" required></div><br/>
+                    <?php if(isset($username_error)){ ?>
+                            <p><?php echo $username_error ?> </p>
+                    <?php } ?>
                 </div>
             </div>
 

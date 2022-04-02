@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require("config.php");
 ?>
 
 <!DOCTYPE html>
@@ -44,57 +44,57 @@
             <div class="col-4">
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Nama Depan</div>
-                    <div class="col-8"><?php echo $_SESSION["namaDepanRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["namaDepanSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Tempat Lahir</div>
-                    <div class="col-8"><?php echo $_SESSION["tempatLahirRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["tempatLahirSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Warga Negara</div>
-                    <div class="col-8"><?php echo $_SESSION["wargaNegaraRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["wargaNegaraSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Alamat</div>
-                    <div class="col-8"><?php echo $_SESSION["alamatRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["alamatSession"] ?></div>
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Nama Tengah</div>
-                    <div class="col-8"><?php echo $_SESSION["namaTengahRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["namaTengahSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Tgl Lahir</div>
-                    <div class="col-8"><?php echo $_SESSION["tanggalLahirRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["tanggalLahirSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Email</div>
-                    <div class="col-8"><?php echo $_SESSION["emailRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["emailSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Kode Pos</div>
-                    <div class="col-8"><?php echo $_SESSION["kodePosRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["kodePosSession"] ?></div>
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Nama Belakang</div>
-                    <div class="col-8"><?php echo $_SESSION["namaBelakangRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["namaBelakangSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">NIK</div>
-                    <div class="col-8"><?php echo $_SESSION["nikRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["nikSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">No HP</div>
-                    <div class="col-8"><?php echo $_SESSION["noHpRegis"] ?></div>
+                    <div class="col-8"><?php echo $_SESSION["noHpSession"] ?></div>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Foto Profil</div>
-                    <div class="col-8"><img src="./terupload/<?php echo $_SESSION["fotoRegis"];?>" alt="fotoRegis" style="max-height:100px;overflow:hidden;"></div>
+                    <div class="col-8"><img src="getImage.php?" alt="fotoRegis" style="max-height:100px;overflow:hidden;"></div>
                 </div>
             </div>
         </div>

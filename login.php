@@ -24,11 +24,6 @@
     </style>
 </head>
 <body>
-    <script type='text/javascript'>
-        function loginGagal(){
-            alert('Login Gagal');
-        }
-    </script>
     <h3 class="text-center" style="margin-top:30px; margin-bottom:80px">Login</h3>
     <form action="prosesLogin.php" method="post" style="margin:1%; text-align:center; width:50vw; margin-left:25vw;">
         <div class="row">
@@ -45,11 +40,6 @@
                     <div class="col-4"><input type="submit" name="login" value="Login" style="background-color:#adf59f; width:100%; height:30px; border:none; font-size:15px; border-radius: 0px;"></div>
                     <div class="col-4"><button type="button" class="btn btn-lg" onclick="location.href='welcome.php'" style="background-color:#fdd7ac; width:100%; height:30px; font-size:15px; border:none; display: flex; justify-content:center; align-items:center; border-radius: 0px;">Kembali</button></div>
                 </div>
-                <?php
-                    if($_SESSION['login_error'] == true){
-                        echo "<script> loginGagal(); </script>";
-                    }
-                ?>
             </div>
         </div>
     </form>

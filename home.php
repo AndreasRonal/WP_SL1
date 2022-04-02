@@ -1,3 +1,7 @@
+<?php
+    require("config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +40,10 @@
         <div class="col" style="text-align:right;margin-right:20px"><a href="logout.php">Logout</a></div>
     </div>
     <div class="row" style="margin-top:100px">
-        Halo <?php session_start(); echo " ". $_SESSION['namaDepanRegis']." ".$_SESSION['namaTengahRegis']." ".$_SESSION['namaBelakangRegis']; ?> , Selamat datang di Aplikasi Pengelolaan Keuangan
+        Halo 
+        <?php
+            echo " ". $_SESSION['namaDepanSession']." ".$_SESSION['namaTengahSession']." ".$_SESSION['namaBelakangSession']; 
+        ?> , Selamat datang di Aplikasi Pengelolaan Keuangan
     </div>
 </body>
 </html>

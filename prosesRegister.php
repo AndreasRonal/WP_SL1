@@ -18,50 +18,11 @@
         $noHp = $_POST['noHp'];
         $password2 = $_POST['password2'];
 
-        if(strlen($username) < 8){
-            $username_error = "Username harus memiliki minimal 8 karakter";
-        }else{
-            $_SESSION["usernameRegis"] = $username;
-            $username_error = '';
-        }
-
-        if(strlen($kodePos) != 5){
-            $kodePos_error = "Kode pos harus memiliki 5 karakter";
-        }else if(!is_numeric($kodePos)){
-            $kodePos_error = "Kode pos harus hanya angka";
-        }else{
-            $_SESSION["kodePosRegis"] = $kodePos;
-            $kodePos_error = '';
-        }
-        
-        if(strlen($password1) < 8){
-            $password1_error = "Password harus memiliki minimal 8 karakter";
-        }else if($password2 != $password1){
+        if($password2 != $password1){
             $password2_error = "Password berbeda dari password 1";
         }else{
             $_SESSION["passwordRegis"] = $password1;
-            $password1_error = '';
             $password2_error = '';
-        }
-
-        if(strlen($nik) != 16){
-            $nik_error = "NIK harus 16 digit";
-        }else if(!is_numeric($nik)){
-            $nik_error = "NIK harus hanya angka";
-        }else{
-            $_SESSION["nikRegis"] = $nik;
-            $nik_error = '';
-        }
-
-        if(strlen($noHp) < 10){
-            $noHp_error = "Nomor handphone minimal 10 digit";
-        }else if(strlen($noHp) > 13){
-            $noHp_error = "Nomor handphone maksimal 13 digit";
-        }else if(!is_numeric($noHp)){
-            $noHp_error = "Nomor handphone harus hanya angka";
-        }else{
-            $_SESSION["noHpRegis"] = $noHp;
-            $noHp_error = '';
         }
 
         $namaFile = $_FILES['foto']['name'];
@@ -89,7 +50,9 @@
             $upload_error = "Maaf, file tidak terupload.";
         }
 
-        if(empty($username_error) && empty($kodePos_error) && empty($password1_error) && empty($password2_error) && empty($nik_error) && empty($noHp_error) && $uploadFlag == 1){
+        if(empty($password2_error) && $uploadFlag == 1){
+            $_SESSION["usernameRegis"] = $username;
+            $_SESSION["nikRegis"] = $nik;
             $_SESSION["namaDepanRegis"] = $namaDepan;
             $_SESSION["tempatLahirRegis"] = $tempatLahir;
             $_SESSION["wargaNegaraRegis"] = $wargaNegara;
@@ -100,11 +63,12 @@
             $_SESSION["emailRegis"] = $email;
             move_uploaded_file($tmp_name, $target_file);
             $_SESSION['fotoRegis'] = $namaFile;
-            $_SESSION['register'] = true;
+            $_SESSION["kodePosRegis"] = $kodePos;
+            $_SESSION["noHpRegis"] = $noHp;
             
             header('Location: welcome.php');
         }else{
-            include('register.php');
+            header('Location: register.php');
         }
     }
 ?>

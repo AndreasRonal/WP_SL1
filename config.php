@@ -1,6 +1,6 @@
 <?php
 
-    session_start();
+    if(!session_id())session_start();
     $server = "localhost";
     $un = "root";
     $pw = "";

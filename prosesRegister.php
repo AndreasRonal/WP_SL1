@@ -1,12 +1,8 @@
 <?php
-    require("config.php");
+    include("config.php");
 
     if(isset($_POST['register'])){
 
-        if(!isset($_SESSION['register_error'])) {
-            $_SESSION['register_error'] = false;
-        }
-        
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
 
@@ -38,14 +34,11 @@
             $query = mysqli_query($connection, $str_query);
             if($query){
                 header("Location: welcome.php");
-                $_SESSION['register_error'] = true;
             }else{
                 header('Location: register.php');
-                $_SESSION['register_error'] = false;
             }
         }else{
             header('Location: register.php');
-            $_SESSION['register_error'] = false;
         }
     }
 ?>

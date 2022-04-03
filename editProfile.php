@@ -95,20 +95,7 @@
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Foto Profil</div>
                     <div class="col-8"> 
-                        <?php
-                            $str_query = "select *from user";
-                            $result = mysqli_query($connection, $str_query);
-                            if($result){
-                                if(mysqli_num_rows($result)){
-                                    while($row = mysqli_fetch_array($result)){
-                                        if($row["username"] == $_SESSION["usernameSession"]){
-                                            echo "ASDSAD";
-                                            echo '<img src="data:image;base64,'.base64_encode($row['foto']).'" alt="fotoRegis">';
-                                        }
-                                    }
-                                }
-                            }
-                        ?>
+                        <img src="getImage.php" alt="fotoRegis" style="max-height:100px;overflow:hidden;">
                     </div>
                 </div>
                 <div class="row" style="margin-bottom:30px">

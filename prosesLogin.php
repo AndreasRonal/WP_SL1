@@ -1,18 +1,15 @@
 <?php
-    require("config.php");
+    include("config.php");
 
     if(isset($_POST['login'])){
 
-        if(!isset($_SESSION['login_error'])) {
-            $_SESSION['login_error'] = false;
-        }
         $str_query = "select * from user";
         $result = mysqli_query($connection, $str_query);
         if($result){
             if(mysqli_num_rows($result)){
                 while($row = mysqli_fetch_array($result)){
+                    echo "ASDSADA";
                     if(($row["username"] == $_POST["usernameLogin"]) && ($row["password"] == $_POST["passwordLogin"])){
-                        echo "ASSDAS";
                         $_SESSION['login_error'] = false;
                         $_SESSION['usernameSession'] = $row["username"];
                         $_SESSION['namaDepanSession'] = $row["namaDepan"];
@@ -30,9 +27,10 @@
                         $_SESSION['fotoSession'] = $row["foto"];
                         $_SESSION['login_error'] = false;
                         header("Location: home.php");
+                    }else{
+                        header("Location: login.php");
                     }
                 }
-                header("Location: login.php");
             }else{
                 header("Location: login.php");
             }

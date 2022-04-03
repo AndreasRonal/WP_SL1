@@ -1,11 +1,5 @@
 <?php
     include("config.php");
-
-    if(isset($_SESSION['username'])){
-        $str_query = "select*from user where username = '".$_SESSION['username']."'";
-        $query = mysqli_query($connection, $str_query);
-        $row = mysqli_fetch_array($query);
-    }
 ?>
 
 <!DOCTYPE html>

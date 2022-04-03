@@ -102,6 +102,9 @@
                 <div class="row" style="margin-bottom:65px">
                     <div class="col-4">Foto Profil</div>
                     <div class="col-8"><label for="foto" class="btn">Silahkan Pilih Foto</label><input type="file" id="foto" name="foto" style="border:none;width:100%" required></div><br/>
+                    <?php if(isset($image_error)){ ?>
+                            <p><?php echo $image_error ?> </p>
+                    <?php } ?>
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Password 2</div>

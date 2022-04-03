@@ -1,5 +1,5 @@
 <?php
-    require("config.php");
+    include("config.php");
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
         html,
         body{
             margin: 0px;
+            margin-left: 10px;
             background-color: #c2f0f7;
         }
         .row{
@@ -102,8 +103,7 @@
                                 if(mysqli_num_rows($result)){
                                     while($row = mysqli_fetch_array($result)){
                                         if($row["username"] == $_SESSION["usernameSession"]){
-                                            echo "ASDSAD";
-                                            echo '<img src="data:image;base64,'.base64_encode($row['foto']).'" alt="fotoRegis">';
+                                            echo '<img src="data:image;base64,'.base64_encode($row['foto']).'" alt="fotoRegis" style="max-height:100px;overflow:hidden;">';
                                         }
                                     }
                                 }

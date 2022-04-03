@@ -7,7 +7,6 @@
     $db_name = "wpasg2";
 
     $connection = mysqli_connect($server, $un, $pw, $db_name);
-    $_SESSION["usernameSession"] = "";
 
     if($connection){
         

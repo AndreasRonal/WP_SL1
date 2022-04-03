@@ -94,7 +94,15 @@
                 </div>
                 <div class="row" style="margin-bottom:30px">
                     <div class="col-4">Foto Profil</div>
-                    <div class="col-8"><img src="getImage.php?" alt="fotoRegis" style="max-height:100px;overflow:hidden;"></div>
+                    <div class="col-8"><?php 
+                        $str_query = 'select foto from user where username="'.$_SESSION["usernameSession"].'"';
+                        $result = mysqli_query($connection, $str_query);
+                        // print_r($result);
+                        if($result)
+                            if(mysqli_num_rows($result))
+                                $row = mysqli_fetch_array($result);?>
+                                <img src="<?php echo $row["foto"];?>" alt="fotoRegis" style="max-height:100px;overflow:hidden;">
+                    </div>
                 </div>
             </div>
         </div>

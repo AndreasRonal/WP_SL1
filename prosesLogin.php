@@ -32,10 +32,8 @@
                         header("Location: home.php");
                     }
                 }
-                // $_SESSION['login_error'] = true;
-                // header("Location: login.php");
+                header("Location: login.php");
             }else{
-                $_SESSION['login_error'] = true;
                 header("Location: login.php");
             }
         }

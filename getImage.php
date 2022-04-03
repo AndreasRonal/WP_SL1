@@ -4,6 +4,7 @@
     $result = mysqli_query($connection, $str_query);
     $row = mysql_fetch_assoc($result);
 
-    // header("Content-type: image/jpeg");
+    header("Content-type: image/jpeg");
+    echo "asda";
     echo $row['foto'];
 ?>

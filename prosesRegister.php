@@ -33,7 +33,7 @@
         $tmp_name = $_FILES['foto']['tmp_name'];
 
         if(empty($password2_error)){
-            $str_query = "insert into user values('".$_POST["namaDepan"]."', '".$_POST["namaTengah"]."', '".$_POST["namaBelakang"]."', '".$_POST["tempatLahir"]."', '".$_POST["tanggalLahir"]."', '".$_POST["nik"]."', '".$_POST["wargaNegara"]."', '".$_POST["email"]."', '".$_POST["noHp"]."', '".$_POST["alamat"]."', '".$_POST["kodePos"]."', '".$_POST["namaFile"]."', '".$_POST[$tmp_name]."', '".$_POST["username"]."', '".$_POST["password1"]."')";
+            $str_query = "insert into user values('".$_POST["namaDepan"]."', '".$_POST["namaTengah"]."', '".$_POST["namaBelakang"]."', '".$_POST["tempatLahir"]."', '".$_POST["tanggalLahir"]."', '".$_POST["nik"]."', '".$_POST["wargaNegara"]."', '".$_POST["email"]."', '".$_POST["noHp"]."', '".$_POST["alamat"]."', '".$_POST["kodePos"]."', '$namaFile', '$tmp_name', '".$_POST["username"]."', '".$_POST["password1"]."')";
             
             $query = mysqli_query($connection, $str_query);
             if($query){
